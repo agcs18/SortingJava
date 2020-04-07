@@ -1,8 +1,18 @@
+import java.util.Arrays;
+import java.util.Scanner;
 public class BubbleSort {
     public static void main(String[] args) {
         BubbleSort obj = new BubbleSort();
-        int arr[] = {5, 4, 3, 2, 1};
-        int size = arr.length - 1;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array : ");
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        int i = 0;
+        while (i < size) {
+            arr[i] = sc.nextInt();
+            i += 1;
+        }
+        size = size - 1;
         obj.Bubble(arr, size);
     }
 
@@ -17,8 +27,6 @@ public class BubbleSort {
                 }
             }
         }
-        for (int z = 0; z <= size; z++) {
-            System.out.println(arr[z]);
-        }
+        System.out.println("Sorted Array : " + Arrays.toString(arr));
     }
 }
